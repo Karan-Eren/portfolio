@@ -610,6 +610,18 @@ header.scrolled {
     }
 }
 
+/* Remove the typed-text pseudo-element cursor that's causing the double cursor */
+.typed-text::after {
+    content: '';
+    display: none;
+}
+
+/* Cursor specific animation properties */
+.cursor.typing {
+    animation: none;
+    opacity: 1;
+}
+
 /* Add more hero shapes for visual interest */
 .hero-shape {
     position: absolute;
@@ -2024,8 +2036,8 @@ body::after {
 
 /* Add typing cursor animation for subtitle */
 .typed-text::after {
-    content: '|';
-    animation: blink 0.8s infinite;
+    content: '';
+    display: none;
 }
 
 /* Add animated background for calendar options */
