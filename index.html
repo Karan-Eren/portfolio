@@ -3,184 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Karan Bharadwaj's portfolio - Software developer specialized in web development, Python, JavaScript, C/C++, and more">
     <title>Karan Bharadwaj | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="portrait.jpg" as="image" fetchpriority="high">
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets with optimized loading -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Fallback for no-JS environments -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    
+    <!-- Load non-critical JS with defer -->
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a href="#" class="logo" data-text="KB">KB</a>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#projects" class="nav-link"><i class="fas fa-code"></i> Projects</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="glitch" data-text="Karan Bharadwaj">Karan Bharadwaj</h1>
-            <p class="subtitle">I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            </div>
-        </div>
-        <div class="hero-shape"></div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-img">
-                    <div class="img-border">
-                        <img src="portrait.jpg" alt="Karan Bharadwaj">
-                    </div>
-                </div>
-                <div class="about-text">
-                    <h3>Hello, I'm <span class="highlight">Karan Bharadwaj</span></h3>
-                    <p>I'm a passionate software developer based in Guwahati, Assam, India. With a strong foundation in programming and web development, I build modern applications that deliver exceptional user experiences.</p>
-                    <p>My expertise spans across multiple programming languages and technologies, including HTML, CSS, JavaScript, Python, Java, C/C++, MongoDB, and SQL. I'm constantly learning and exploring new tools to expand my skill set.</p>
-                    <div class="skills">
-                        <div class="skill">
-                            <span>HTML/CSS</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
-                        </div>
-                        <div class="skill">
-                            <span>JavaScript</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
-                        </div>
-                        <div class="skill">
-                            <span>Python</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-                        </div>
-                        <div class="skill">
-                            <span>C/C++</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-                        </div>
-                        <div class="skill">
-                            <span>MongoDB/SQL</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
-                        </div>
-                        <div class="skill">
-                            <span>Java</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-                        </div>
-                    </div>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Karan Bharadwaj">Karan Bharadwaj</h1>
+                <p class="subtitle">I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="mediprompt.jpg" alt="MediPrompt">
-                    </div>
-                    <div class="project-content">
-                        <h3>MediPrompt - AI Diagnostic Report Generator</h3>
-                        <p>A Flask-based web application that generates structured medical diagnostic reports using natural language input. It leverages Mistral via Ollama for local inference with live word-by-word streaming output.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Flask</span>
-                            <span>AI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Justreadingbro/MediPrompt" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+            <div class="hero-shape"></div>
+        </section>
+    
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-img">
+                        <div class="img-border">
+                            <img src="portrait.jpg" alt="Karan Bharadwaj" width="300" height="300">
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="chatweb.png" alt="ChatWeb">
-                    </div>
-                    <div class="project-content">
-                        <h3>ChatWeb - Interactive Web Chat Application</h3>
-                        <p>A responsive web-based chat application featuring real-time messaging capabilities, user authentication, and responsive design for seamless communication across devices.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Karan-Eren/chatweb" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://justreadingbro.github.io/ChatApp/" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="h_project.jpg" alt="Heart Attack Alert System">
-                    </div>
-                    <div class="project-content">
-                        <h3>HeartGuard - Attack Alert System</h3>
-                        <p>A prototype heart attack detection and alert system that monitors ECG readings and automatically notifies emergency contacts via Twilio when abnormal heart activity is detected.</p>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>Twilio API</span>
-                            <span>IoT</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Justreadingbro/Heart-Attack-alert-system-using-twilio-" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                    <div class="about-text">
+                        <h3>Hello, I'm <span class="highlight">Karan Bharadwaj</span></h3>
+                        <p>I'm a passionate software developer based in Guwahati, Assam, India. With a strong foundation in programming and web development, I build modern applications that deliver exceptional user experiences.</p>
+                        <p>My expertise spans across multiple programming languages and technologies, including HTML, CSS, JavaScript, Python, Java, C/C++, MongoDB, and SQL. I'm constantly learning and exploring new tools to expand my skill set.</p>
+                        <div class="skills">
+                            <div class="skill">
+                                <span>HTML/CSS</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <span>JavaScript</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <span>Python</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <span>C/C++</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <span>MongoDB/SQL</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <span>Java</span>
+                                <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>karanbharadwaj781@gmail.com</p>
+        </section>
+    
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="mediprompt.jpg" alt="MediPrompt" width="350" height="200" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>MediPrompt - AI Diagnostic Report Generator</h3>
+                            <p>A Flask-based web application that generates structured medical diagnostic reports using natural language input. It leverages Mistral via Ollama for local inference with live word-by-word streaming output.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>AI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Justreadingbro/MediPrompt" class="project-link" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Guwahati, Assam, India</p>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="chatweb.png" alt="ChatWeb" width="350" height="200" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>ChatWeb - Interactive Web Chat Application</h3>
+                            <p>A responsive web-based chat application featuring real-time messaging capabilities, user authentication, and responsive design for seamless communication across devices.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Karan-Eren/chatweb" class="project-link" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                                <a href="https://justreadingbro.github.io/ChatApp/" class="project-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="contact-direct">
-                    <h3>Connect With Me</h3>
-                    <p>Feel free to reach out if you have any questions or would like to work together. I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
-                    <div class="contact-btns">
-                        <a href="mailto:karanbharadwaj781@gmail.com?subject=Hello%20from%20your%20website" class="btn btn-primary email-btn">
-                            <i class="fas fa-envelope"></i> Email Me Directly
-                        </a>
-                        <button id="schedule-call-btn" class="btn btn-secondary">
-                            <i class="fas fa-calendar-alt"></i> Schedule a Call
-                        </button>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="h_project.jpg" alt="Heart Attack Alert System" width="350" height="200" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>HeartGuard - Attack Alert System</h3>
+                            <p>A prototype heart attack detection and alert system that monitors ECG readings and automatically notifies emergency contacts via Twilio when abnormal heart activity is detected.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>Twilio API</span>
+                                <span>IoT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Justreadingbro/Heart-Attack-alert-system-using-twilio-" class="project-link" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>karanbharadwaj781@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Guwahati, Assam, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-direct">
+                        <h3>Connect With Me</h3>
+                        <p>Feel free to reach out if you have any questions or would like to work together. I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+                        <div class="contact-btns">
+                            <a href="mailto:karanbharadwaj781@gmail.com?subject=Hello%20from%20your%20website" class="btn btn-primary email-btn">
+                                <i class="fas fa-envelope"></i> Email Me Directly
+                            </a>
+                            <button id="schedule-call-btn" class="btn btn-secondary">
+                                <i class="fas fa-calendar-alt"></i> Schedule a Call
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Fixed Calendar Options Section (hidden initially) -->
     <div id="calendar-options" class="calendar-options">
@@ -202,7 +221,7 @@
                         <p>Works with Apple Calendar, Outlook, and most other calendar apps</p>
                     </div>
                 </a>
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Call+with+Karan+Bharadwaj&details=Portfolio+website+follow-up+call.&dates=20231220T150000Z/20231220T160000Z&location=Phone+or+Video+Call" target="_blank" class="calendar-option">
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Call+with+Karan+Bharadwaj&details=Portfolio+website+follow-up+call.&dates=20231220T150000Z/20231220T160000Z&location=Phone+or+Video+Call" target="_blank" rel="noopener" class="calendar-option">
                     <div class="calendar-option-icon">
                         <i class="fab fa-google"></i>
                     </div>
@@ -227,14 +246,16 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/Karan-Eren" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/karan-bharadwaj-0a92a5276" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/karan_bharadwaj_?igsh=dXU2YnNtd2VmYWs1" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Karan-Eren" class="social-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/karan-bharadwaj-0a92a5276" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/karan_bharadwaj_?igsh=dXU2YnNtd2VmYWs1" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
             <p>&copy; 2023 Karan Bharadwaj. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Load JavaScript at the end for better performance -->
+    <script src="hamburger.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html> 
